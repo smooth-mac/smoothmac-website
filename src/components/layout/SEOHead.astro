@@ -1,10 +1,13 @@
 ---
+import type { AlternateLink } from '../../i18n/index';
+
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   canonicalUrl?: string;
   schema?: object;
+  alternates?: AlternateLink[];
 }
 
 const {
@@ -13,6 +16,7 @@ const {
   ogImage = '/og-image.png',
   canonicalUrl = Astro.url.href,
   schema,
+  alternates,
 } = Astro.props;
 
 const siteName = 'smooth-mac';
@@ -47,6 +51,14 @@ const fullOgImage = new URL(ogImage, Astro.site).toString();
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={fullOgImage} />
+
+<!-- hreflang alternates -->
+{alternates && alternates.map((alt) => (
+  <link rel="alternate" hreflang={alt.hreflang} href={alt.url} />
+))}
+{alternates && (
+  <link rel="alternate" hreflang="x-default" href={alternates.find((a) => a.locale === 'en')?.url ?? canonicalUrl} />
+)}
 
 <!-- Preload Inter Variable font -->
 <link

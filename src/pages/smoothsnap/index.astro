@@ -4,39 +4,44 @@ import ProductHero from '../../components/product/ProductHero.astro';
 import FeatureGrid from '../../components/product/FeatureGrid.astro';
 import DownloadButton from '../../components/product/DownloadButton.astro';
 import { getProduct } from '../../data/products';
+import { getTranslations, getLocalizedPath } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
 
+const locale: Locale = 'en';
+const t = getTranslations(locale);
+const pt = t.products.smoothsnap;
 const product = getProduct('smoothsnap')!;
 ---
 
-<ProductLayout product={product}>
-  <ProductHero product={product} />
+<ProductLayout product={product} locale={locale}>
+  <ProductHero product={product} locale={locale} />
 
   <!-- Long description -->
   <section class="max-w-3xl mx-auto px-6 py-12 text-center">
     <p class="text-lg text-[var(--text-secondary)] leading-relaxed reveal">
-      {product.longDescription}
+      {pt.longDescription}
     </p>
   </section>
 
-  <FeatureGrid product={product} />
+  <FeatureGrid product={product} locale={locale} />
 
   <!-- Final CTA -->
   <section class="max-w-6xl mx-auto px-6 py-20 text-center border-t border-[var(--border)]">
     <h2 class="text-2xl font-bold text-[var(--text)] mb-3 reveal">
-      Ready to snap?
+      {pt.ctaHeadline}
     </h2>
     <p class="text-[var(--text-secondary)] mb-8 reveal">
-      One-time purchase · {product.macosRequirement}
+      {t.product.onePurchase} · {product.macosRequirement}
     </p>
     <div class="reveal">
-      <DownloadButton url={product.appStoreUrl} accentColor={product.accentColor} size="lg" />
+      <DownloadButton url={product.appStoreUrl} accentColor={product.accentColor} size="lg" label={t.product.downloadButton} />
     </div>
 
     <!-- Cross-sell -->
     <p class="mt-10 text-sm text-[var(--text-secondary)] reveal">
-      Also check out
-      <a href="/smoothpeek" class="text-[var(--accent)] hover:underline">SmoothPeek</a>
-      — Quick Look, elevated.
+      {pt.crossSell}
+      <a href={getLocalizedPath('/smoothpeek', locale)} class="text-[var(--accent)] hover:underline">SmoothPeek</a>
+      — {pt.crossSellTagline}
     </p>
   </section>
 </ProductLayout>

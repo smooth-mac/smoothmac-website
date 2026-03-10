@@ -1,7 +1,17 @@
 ---
 import { products } from '../../data/products';
+import { getTranslations, getLocalizedPath } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
 
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const t = getTranslations(locale);
 const year = new Date().getFullYear();
+
+const homeHref = locale === 'en' ? '/' : `/${locale}/`;
 ---
 
 <footer class="border-t border-[var(--border)] mt-24">
@@ -10,19 +20,19 @@ const year = new Date().getFullYear();
 
       <!-- Brand -->
       <div>
-        <a href="/" class="font-semibold text-[var(--text)] text-base tracking-tight hover:opacity-80 transition-opacity">
+        <a href={homeHref} class="font-semibold text-[var(--text)] text-base tracking-tight hover:opacity-80 transition-opacity">
           smooth-mac
         </a>
-        <p class="text-sm text-[var(--text-secondary)] mt-1">Tools for the Mac you actually use.</p>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">{t.footer.tagline}</p>
       </div>
 
       <!-- Links -->
       <nav class="flex flex-wrap gap-x-8 gap-y-3">
         <div>
-          <p class="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-widest mb-2">Products</p>
+          <p class="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-widest mb-2">{t.footer.productsHeading}</p>
           <div class="flex flex-col gap-1.5">
             {products.map((product) => (
-              <a href={`/${product.slug}`} class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
+              <a href={getLocalizedPath(`/${product.slug}`, locale)} class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
                 {product.name}
               </a>
             ))}
@@ -30,10 +40,10 @@ const year = new Date().getFullYear();
         </div>
 
         <div>
-          <p class="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-widest mb-2">Company</p>
+          <p class="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-widest mb-2">{t.footer.companyHeading}</p>
           <div class="flex flex-col gap-1.5">
-            <a href="/support" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">Support</a>
-            <a href="/privacy" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">Privacy Policy</a>
+            <a href={getLocalizedPath('/support', locale)} class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">{t.footer.support}</a>
+            <a href={getLocalizedPath('/privacy', locale)} class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">{t.footer.privacy}</a>
           </div>
         </div>
       </nav>
@@ -42,13 +52,13 @@ const year = new Date().getFullYear();
     <!-- Bottom -->
     <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 mt-10 pt-6 border-t border-[var(--border)]">
       <p class="text-xs text-[var(--text-secondary)]">
-        &copy; {year} smooth-mac. Made on a Mac.
+        &copy; {year} smooth-mac. {t.footer.madeOnMac}
       </p>
       <p class="text-xs text-[var(--text-secondary)]">
-        Available exclusively on the
+        {t.footer.appStoreBlurb}
         <a
           href="https://apps.apple.com"
-          class="text-[var(--accent)] hover:underline"
+          class="text-[var(--accent)] hover:underline ml-1"
           target="_blank"
           rel="noopener noreferrer"
         >

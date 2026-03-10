@@ -1,19 +1,29 @@
 ---
 import { products } from '../../data/products';
 import ProductCard from '../product/ProductCard.astro';
+import { getTranslations } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const t = getTranslations(locale);
+const showcase = t.home.showcase;
 ---
 
 <section class="max-w-6xl mx-auto px-6 py-24">
   <!-- Section header -->
   <div class="text-center mb-16 reveal">
     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-3">
-      Our Apps
+      {showcase.label}
     </p>
     <h2 class="text-3xl md:text-4xl font-bold text-[var(--text)] tracking-tight">
-      Two apps. One studio.
+      {showcase.headline}
     </h2>
     <p class="text-[var(--text-secondary)] mt-3 max-w-md mx-auto">
-      Each one solves a real problem on macOS — nothing more, nothing less.
+      {showcase.subtext}
     </p>
   </div>
 
@@ -21,7 +31,7 @@ import ProductCard from '../product/ProductCard.astro';
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {products.map((product) => (
       <div class="reveal">
-        <ProductCard product={product} />
+        <ProductCard product={product} locale={locale} />
       </div>
     ))}
   </div>

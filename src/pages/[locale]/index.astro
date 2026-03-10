@@ -1,11 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroSection from '../components/home/HeroSection.astro';
-import ProductShowcase from '../components/home/ProductShowcase.astro';
-import { getTranslations, getAlternateLinks } from '../i18n/index';
-import type { Locale } from '../i18n/types';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/home/HeroSection.astro';
+import ProductShowcase from '../../components/home/ProductShowcase.astro';
+import { getTranslations, getAlternateLinks, nonDefaultLocales } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
 
-const locale: Locale = 'en';
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
 const t = getTranslations(locale);
 const alternates = getAlternateLinks('/', Astro.site?.toString() ?? 'https://smoothmac.app');
 

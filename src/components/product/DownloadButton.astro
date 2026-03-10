@@ -3,9 +3,10 @@ interface Props {
   url: string;
   accentColor?: string;
   size?: 'sm' | 'md' | 'lg';
+  label?: string;
 }
 
-const { url, accentColor = '#5b8af0', size = 'md' } = Astro.props;
+const { url, accentColor = '#5b8af0', size = 'md', label = 'Download on the App Store' } = Astro.props;
 
 const sizeClasses = {
   sm: 'px-4 py-2 text-sm',
@@ -29,5 +30,5 @@ const sizeClasses = {
   <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
     <path d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm3.586 14.198L10 10.612l-3.586 3.586-1.414-1.414L8.586 9.2 5 5.614l1.414-1.414L10 7.786l3.586-3.586L15 5.614 11.414 9.2l3.586 3.584-1.414 1.414z"/>
   </svg>
-  Download on the App Store
+  {label}
 </a>

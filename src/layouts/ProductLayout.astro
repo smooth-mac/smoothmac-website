@@ -1,18 +1,23 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { Product } from '../data/products';
+import type { Locale } from '../i18n/types';
+import { getTranslations, getAlternateLinks } from '../i18n/index';
 
 interface Props {
   product: Product;
+  locale?: Locale;
 }
 
-const { product } = Astro.props;
+const { product, locale = 'en' } = Astro.props;
+const t = getTranslations(locale);
+const pt = t.products[product.slug as 'smoothsnap' | 'smoothpeek'];
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: product.name,
-  description: product.description,
+  description: pt.description,
   operatingSystem: product.macosRequirement,
   applicationCategory: 'UtilitiesApplication',
   softwareVersion: product.version,
@@ -24,15 +29,16 @@ const schema = {
   url: `https://smoothmac.app/${product.slug}`,
 };
 
-const title = `${product.name} — ${product.tagline.replace('.', '')} for macOS`;
-const description = product.description;
+const alternates = getAlternateLinks(`/${product.slug}`, Astro.site?.toString() ?? 'https://smoothmac.app');
 ---
 
 <BaseLayout
-  title={title}
-  description={description}
+  title={pt.seo.title}
+  description={pt.seo.description}
   ogImage={`/products/${product.slug}/hero.png`}
   schema={schema}
+  locale={locale}
+  alternates={alternates}
 >
   <slot />
 </BaseLayout>

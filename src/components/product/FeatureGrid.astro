@@ -1,18 +1,23 @@
 ---
 import type { Product } from '../../data/products';
+import { getTranslations } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
 
 interface Props {
   product: Product;
+  locale?: Locale;
 }
 
-const { product } = Astro.props;
+const { product, locale = 'en' } = Astro.props;
+const t = getTranslations(locale);
+const pt = t.products[product.slug as 'smoothsnap' | 'smoothpeek'];
 ---
 
 <section id="features" class="max-w-6xl mx-auto px-6 py-20">
   <div class="text-center mb-14 reveal">
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-3">Features</p>
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-3">{t.product.featuresLabel}</p>
     <h2 class="text-3xl md:text-4xl font-bold text-[var(--text)] tracking-tight">
-      Everything you need.<br />Nothing you don't.
+      {t.product.featuresHeadline[0]}<br />{t.product.featuresHeadline[1]}
     </h2>
   </div>
 
@@ -28,8 +33,8 @@ const { product } = Astro.props;
         >
           {feature.icon}
         </div>
-        <h3 class="font-semibold text-[var(--text)] mb-2">{feature.title}</h3>
-        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">{feature.description}</p>
+        <h3 class="font-semibold text-[var(--text)] mb-2">{pt.features[i]?.title}</h3>
+        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">{pt.features[i]?.description}</p>
       </div>
     ))}
   </div>

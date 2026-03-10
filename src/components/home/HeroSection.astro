@@ -1,5 +1,15 @@
 ---
 import { products } from '../../data/products';
+import { getTranslations, getLocalizedPath } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = 'en' } = Astro.props;
+const t = getTranslations(locale);
+const hero = t.home.hero;
 ---
 
 <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 pb-16 overflow-hidden">
@@ -18,25 +28,24 @@ import { products } from '../../data/products';
 
   <!-- Studio label -->
   <p class="animate-fade-up animate-fade-up-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-6">
-    smooth-mac
+    {hero.studioLabel}
   </p>
 
   <!-- Headline -->
-  <h1 class="animate-fade-up animate-fade-up-2 text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--text)] tracking-tight leading-[1.05] mb-6 max-w-3xl">
-    Tools for the Mac<br class="hidden sm:block" />
-    you actually use.
+  <h1 class="animate-fade-up animate-fade-up-2 text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--text)] tracking-tight leading-[1.05] mb-6 max-w-3xl whitespace-pre-line">
+    {hero.headline}
   </h1>
 
   <!-- Subheadline -->
   <p class="animate-fade-up animate-fade-up-3 text-lg md:text-xl text-[var(--text-secondary)] max-w-xl mb-12 leading-relaxed">
-    Two apps. Carefully made. Quietly useful.
+    {hero.subheadline}
   </p>
 
   <!-- Product CTAs -->
   <div class="animate-fade-up animate-fade-up-4 flex flex-col sm:flex-row items-center gap-4">
-    {products.map((product, i) => (
+    {products.map((product) => (
       <a
-        href={`/${product.slug}`}
+        href={getLocalizedPath(`/${product.slug}`, locale)}
         class="group flex items-center gap-3 px-6 py-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:border-opacity-60 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
       >
         <div

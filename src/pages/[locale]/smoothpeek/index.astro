@@ -1,13 +1,17 @@
 ---
-import ProductLayout from '../../layouts/ProductLayout.astro';
-import ProductHero from '../../components/product/ProductHero.astro';
-import FeatureGrid from '../../components/product/FeatureGrid.astro';
-import DownloadButton from '../../components/product/DownloadButton.astro';
-import { getProduct } from '../../data/products';
-import { getTranslations, getLocalizedPath } from '../../i18n/index';
-import type { Locale } from '../../i18n/types';
+import ProductLayout from '../../../layouts/ProductLayout.astro';
+import ProductHero from '../../../components/product/ProductHero.astro';
+import FeatureGrid from '../../../components/product/FeatureGrid.astro';
+import DownloadButton from '../../../components/product/DownloadButton.astro';
+import { getProduct } from '../../../data/products';
+import { getTranslations, getLocalizedPath, nonDefaultLocales } from '../../../i18n/index';
+import type { Locale } from '../../../i18n/types';
 
-const locale: Locale = 'en';
+export function getStaticPaths() {
+  return nonDefaultLocales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
 const t = getTranslations(locale);
 const pt = t.products.smoothpeek;
 const product = getProduct('smoothpeek')!;

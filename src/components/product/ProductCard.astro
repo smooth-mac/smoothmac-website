@@ -1,13 +1,18 @@
 ---
 import type { Product } from '../../data/products';
 import { formatPrice } from '../../lib/utils';
+import { getTranslations, getLocalizedPath } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
 
 interface Props {
   product: Product;
+  locale?: Locale;
   class?: string;
 }
 
-const { product, class: className } = Astro.props;
+const { product, locale = 'en', class: className } = Astro.props;
+const t = getTranslations(locale);
+const pt = t.products[product.slug as 'smoothsnap' | 'smoothpeek'];
 ---
 
 <article
@@ -29,7 +34,7 @@ const { product, class: className } = Astro.props;
     </div>
     <div>
       <h3 class="font-semibold text-[var(--text)] text-lg leading-tight">{product.name}</h3>
-      <p class="text-sm text-[var(--text-secondary)] mt-0.5">{product.tagline}</p>
+      <p class="text-sm text-[var(--text-secondary)] mt-0.5">{pt.tagline}</p>
     </div>
   </div>
 
@@ -60,10 +65,10 @@ const { product, class: className } = Astro.props;
     <!-- CTAs -->
     <div class="flex items-center gap-2">
       <a
-        href={`/${product.slug}`}
+        href={getLocalizedPath(`/${product.slug}`, locale)}
         class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors px-3 py-1.5"
       >
-        Learn more
+        {t.product.learnMore}
       </a>
       <a
         href={product.appStoreUrl}
@@ -72,7 +77,7 @@ const { product, class: className } = Astro.props;
         class="text-sm font-medium px-4 py-1.5 rounded-lg transition-all duration-200 hover:opacity-90 hover:shadow-md"
         style={`background-color: ${product.accentColor}; color: white`}
       >
-        App Store
+        {t.product.appStore}
       </a>
     </div>
   </div>

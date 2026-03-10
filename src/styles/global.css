@@ -27,9 +27,10 @@
   --font-sans: "Inter Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* ===== CSS Custom Properties (dark mode) ===== */
+/* ===== CSS Custom Properties ===== */
 :root {
   --bg: var(--color-bg);
+  --bg-rgb: 250, 250, 250;
   --surface: var(--color-surface);
   --surface-raised: var(--color-surface-raised);
   --text: var(--color-text);
@@ -38,9 +39,11 @@
   --border: var(--color-border);
 }
 
+/* System dark (no manual override) */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: var(--color-bg-dark);
+    --bg-rgb: 17, 17, 17;
     --surface: var(--color-surface-dark);
     --surface-raised: var(--color-surface-raised-dark);
     --text: var(--color-text-dark);
@@ -48,6 +51,18 @@
     --accent: var(--color-accent-dark);
     --border: var(--color-border-dark);
   }
+}
+
+/* Forced dark */
+:root[data-theme="dark"] {
+  --bg: var(--color-bg-dark);
+  --bg-rgb: 17, 17, 17;
+  --surface: var(--color-surface-dark);
+  --surface-raised: var(--color-surface-raised-dark);
+  --text: var(--color-text-dark);
+  --text-secondary: var(--color-text-secondary-dark);
+  --accent: var(--color-accent-dark);
+  --border: var(--color-border-dark);
 }
 
 /* ===== Base ===== */

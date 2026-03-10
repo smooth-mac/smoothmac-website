@@ -17,6 +17,15 @@ const { title, description, ogImage, schema } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Prevent FOUC: apply stored theme before first paint -->
+    <script is:inline>
+      (function () {
+        var t = localStorage.getItem('smoothmac-theme');
+        if (t === 'dark' || t === 'light') {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      })();
+    </script>
     <SEOHead
       title={title}
       description={description}

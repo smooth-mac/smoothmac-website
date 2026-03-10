@@ -1,0 +1,57 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+import ProductHero from '../../components/product/ProductHero.astro';
+import FeatureGrid from '../../components/product/FeatureGrid.astro';
+import DownloadButton from '../../components/product/DownloadButton.astro';
+import { getProduct } from '../../data/products';
+
+const product = getProduct('smoothpeek')!;
+---
+
+<ProductLayout product={product}>
+  <ProductHero product={product} />
+
+  <!-- Long description -->
+  <section class="max-w-3xl mx-auto px-6 py-12 text-center">
+    <p class="text-lg text-[var(--text-secondary)] leading-relaxed reveal">
+      {product.longDescription}
+    </p>
+  </section>
+
+  <FeatureGrid product={product} />
+
+  <!-- Final CTA -->
+  <section class="max-w-6xl mx-auto px-6 py-20 text-center border-t border-[var(--border)]">
+    <h2 class="text-2xl font-bold text-[var(--text)] mb-3 reveal">
+      See what's inside.
+    </h2>
+    <p class="text-[var(--text-secondary)] mb-8 reveal">
+      One-time purchase · {product.macosRequirement}
+    </p>
+    <div class="reveal">
+      <DownloadButton url={product.appStoreUrl} accentColor={product.accentColor} size="lg" />
+    </div>
+
+    <!-- Cross-sell -->
+    <p class="mt-10 text-sm text-[var(--text-secondary)] reveal">
+      Also check out
+      <a href="/smoothsnap" class="text-[var(--accent)] hover:underline">SmoothSnap</a>
+      — window snapping that feels native.
+    </p>
+  </section>
+</ProductLayout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>

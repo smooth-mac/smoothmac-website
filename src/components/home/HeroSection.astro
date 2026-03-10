@@ -1,0 +1,68 @@
+---
+import { products } from '../../data/products';
+---
+
+<section class="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 pb-16 overflow-hidden">
+
+  <!-- Background blur effect -->
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <div
+      class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl"
+      style="background: radial-gradient(circle, #5b8af0, transparent)"
+    ></div>
+    <div
+      class="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full opacity-8 blur-3xl"
+      style="background: radial-gradient(circle, #34c759, transparent)"
+    ></div>
+  </div>
+
+  <!-- Studio label -->
+  <p class="animate-fade-up animate-fade-up-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-6">
+    smooth-mac
+  </p>
+
+  <!-- Headline -->
+  <h1 class="animate-fade-up animate-fade-up-2 text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--text)] tracking-tight leading-[1.05] mb-6 max-w-3xl">
+    Tools for the Mac<br class="hidden sm:block" />
+    you actually use.
+  </h1>
+
+  <!-- Subheadline -->
+  <p class="animate-fade-up animate-fade-up-3 text-lg md:text-xl text-[var(--text-secondary)] max-w-xl mb-12 leading-relaxed">
+    Two apps. Carefully made. Quietly useful.
+  </p>
+
+  <!-- Product CTAs -->
+  <div class="animate-fade-up animate-fade-up-4 flex flex-col sm:flex-row items-center gap-4">
+    {products.map((product, i) => (
+      <a
+        href={`/${product.slug}`}
+        class="group flex items-center gap-3 px-6 py-3 rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:border-opacity-60 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+      >
+        <div
+          class="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold"
+          style={`background-color: ${product.accentColor}20; color: ${product.accentColor}`}
+        >
+          {product.name[6] ?? product.name[0]}
+        </div>
+        <span class="text-sm font-medium text-[var(--text)]">{product.name}</span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 14 14"
+          fill="none"
+          class="text-[var(--text-secondary)] group-hover:translate-x-0.5 transition-transform"
+        >
+          <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    ))}
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M4 7l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>

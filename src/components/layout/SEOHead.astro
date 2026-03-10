@@ -1,0 +1,63 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  schema?: object;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og-image.png',
+  canonicalUrl = Astro.url.href,
+  schema,
+} = Astro.props;
+
+const siteName = 'smooth-mac';
+const fullOgImage = new URL(ogImage, Astro.site).toString();
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Primary Meta -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />
+
+<!-- Preload Inter Variable font -->
+<link
+  rel="preload"
+  href="/fonts/inter-latin.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
+
+<!-- JSON-LD Structured Data -->
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

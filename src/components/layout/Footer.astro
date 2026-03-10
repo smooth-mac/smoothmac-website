@@ -1,0 +1,60 @@
+---
+import { products } from '../../data/products';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--border)] mt-24">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+
+      <!-- Brand -->
+      <div>
+        <a href="/" class="font-semibold text-[var(--text)] text-base tracking-tight hover:opacity-80 transition-opacity">
+          smooth-mac
+        </a>
+        <p class="text-sm text-[var(--text-secondary)] mt-1">Tools for the Mac you actually use.</p>
+      </div>
+
+      <!-- Links -->
+      <nav class="flex flex-wrap gap-x-8 gap-y-3">
+        <div>
+          <p class="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-widest mb-2">Products</p>
+          <div class="flex flex-col gap-1.5">
+            {products.map((product) => (
+              <a href={`/${product.slug}`} class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">
+                {product.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-medium text-[var(--text-secondary)] uppercase tracking-widest mb-2">Company</p>
+          <div class="flex flex-col gap-1.5">
+            <a href="/support" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">Support</a>
+            <a href="/privacy" class="text-sm text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors">Privacy Policy</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Bottom -->
+    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2 mt-10 pt-6 border-t border-[var(--border)]">
+      <p class="text-xs text-[var(--text-secondary)]">
+        &copy; {year} smooth-mac. Made on a Mac.
+      </p>
+      <p class="text-xs text-[var(--text-secondary)]">
+        Available exclusively on the
+        <a
+          href="https://apps.apple.com"
+          class="text-[var(--accent)] hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Mac App Store
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

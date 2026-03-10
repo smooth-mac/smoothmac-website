@@ -1,0 +1,38 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { Product } from '../data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: product.name,
+  description: product.description,
+  operatingSystem: product.macosRequirement,
+  applicationCategory: 'UtilitiesApplication',
+  softwareVersion: product.version,
+  offers: {
+    '@type': 'Offer',
+    price: product.price === 'free' ? '0' : product.price.toString(),
+    priceCurrency: 'USD',
+  },
+  url: `https://smoothmac.app/${product.slug}`,
+};
+
+const title = `${product.name} — ${product.tagline.replace('.', '')} for macOS`;
+const description = product.description;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={`/products/${product.slug}/hero.png`}
+  schema={schema}
+>
+  <slot />
+</BaseLayout>

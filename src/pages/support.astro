@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { products } from '../data/products';
+---
+
+<BaseLayout
+  title="Support — smooth-mac"
+  description="Get help with SmoothSnap or SmoothPeek. FAQs, compatibility info, and contact."
+>
+  <div class="max-w-2xl mx-auto px-6 pt-32 pb-20">
+    <h1 class="text-3xl font-bold text-[var(--text)] mb-3">Support</h1>
+    <p class="text-[var(--text-secondary)] mb-12">
+      Having trouble? We're here to help.
+    </p>
+
+    <!-- Product selector -->
+    <div class="flex gap-3 mb-10">
+      {products.map((p) => (
+        <a
+          href={`#${p.slug}`}
+          class="px-4 py-2 rounded-lg text-sm font-medium border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text)] hover:border-opacity-60 transition-all"
+        >
+          {p.name}
+        </a>
+      ))}
+    </div>
+
+    <!-- SmoothSnap FAQ -->
+    <section id="smoothsnap" class="mb-12">
+      <h2 class="text-xl font-semibold text-[var(--text)] mb-6 flex items-center gap-2">
+        <span class="w-6 h-6 rounded-md text-xs flex items-center justify-center font-bold" style="background: #34c75920; color: #34c759">S</span>
+        SmoothSnap
+      </h2>
+      <div class="space-y-6">
+        {[
+          { q: 'Which macOS versions are supported?', a: 'SmoothSnap requires macOS 13 Ventura or later. It runs natively on both Apple Silicon and Intel Macs.' },
+          { q: 'Does it work with Stage Manager?', a: 'Yes. SmoothSnap is fully aware of Stage Manager and works alongside it without conflicts.' },
+          { q: 'Can I customize keyboard shortcuts?', a: 'Yes — open SmoothSnap preferences to customize any snap shortcut.' },
+        ].map(({ q, a }) => (
+          <div>
+            <h3 class="font-medium text-[var(--text)] mb-1">{q}</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SmoothPeek FAQ -->
+    <section id="smoothpeek" class="mb-12">
+      <h2 class="text-xl font-semibold text-[var(--text)] mb-6 flex items-center gap-2">
+        <span class="w-6 h-6 rounded-md text-xs flex items-center justify-center font-bold" style="background: #ff9f0a20; color: #ff9f0a">P</span>
+        SmoothPeek
+      </h2>
+      <div class="space-y-6">
+        {[
+          { q: 'Which file types does SmoothPeek add support for?', a: 'SmoothPeek adds preview support for code files, markdown, archives, fonts, and more — a full list is available in-app.' },
+          { q: 'Does it replace Quick Look?', a: 'SmoothPeek extends Quick Look — it does not replace it. You still use the Space key as normal.' },
+          { q: 'Is it compatible with third-party file managers?', a: 'SmoothPeek works wherever Quick Look does, including third-party Finder alternatives that use the Quick Look API.' },
+        ].map(({ q, a }) => (
+          <div>
+            <h3 class="font-medium text-[var(--text)] mb-1">{q}</h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed">{a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)]">
+      <h2 class="font-semibold text-[var(--text)] mb-2">Still need help?</h2>
+      <p class="text-sm text-[var(--text-secondary)] mb-4">
+        Email us and we'll get back to you within one business day.
+      </p>
+      <a
+        href="mailto:support@smoothmac.app"
+        class="text-sm font-medium text-[var(--accent)] hover:underline"
+      >
+        support@smoothmac.app
+      </a>
+    </section>
+  </div>
+</BaseLayout>

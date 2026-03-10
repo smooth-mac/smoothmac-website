@@ -1,0 +1,45 @@
+---
+import { products } from '../../data/products';
+import ProductCard from '../product/ProductCard.astro';
+---
+
+<section class="max-w-6xl mx-auto px-6 py-24">
+  <!-- Section header -->
+  <div class="text-center mb-16 reveal">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-3">
+      Our Apps
+    </p>
+    <h2 class="text-3xl md:text-4xl font-bold text-[var(--text)] tracking-tight">
+      Two apps. One studio.
+    </h2>
+    <p class="text-[var(--text-secondary)] mt-3 max-w-md mx-auto">
+      Each one solves a real problem on macOS — nothing more, nothing less.
+    </p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {products.map((product) => (
+      <div class="reveal">
+        <ProductCard product={product} />
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  // IntersectionObserver for reveal animations
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>

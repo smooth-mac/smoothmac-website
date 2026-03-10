@@ -1,0 +1,76 @@
+---
+import type { Product } from '../../data/products';
+import { formatPrice } from '../../lib/utils';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+---
+
+<section class="relative min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-28 pb-16 overflow-hidden">
+  <!-- Background glow -->
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-3xl opacity-15"
+      style={`background: radial-gradient(ellipse, ${product.accentColor}, transparent)`}
+    ></div>
+  </div>
+
+  <!-- App icon -->
+  <div
+    class="animate-fade-up animate-fade-up-1 w-24 h-24 rounded-3xl flex items-center justify-center text-4xl font-bold mb-6 shadow-xl"
+    style={`background-color: ${product.accentColor}20; color: ${product.accentColor}; border: 1px solid ${product.accentColor}30`}
+  >
+    {product.name[6] ?? product.name[0]}
+  </div>
+
+  <!-- Product name -->
+  <h1 class="animate-fade-up animate-fade-up-2 text-5xl md:text-6xl font-bold text-[var(--text)] tracking-tight mb-4">
+    {product.name}
+  </h1>
+
+  <!-- Tagline -->
+  <p class="animate-fade-up animate-fade-up-3 text-xl md:text-2xl text-[var(--text-secondary)] mb-4 max-w-xl">
+    {product.description}
+  </p>
+
+  <!-- Meta badges -->
+  <div class="animate-fade-up animate-fade-up-4 flex items-center gap-3 mb-8 flex-wrap justify-center">
+    <span
+      class="text-sm font-semibold px-3 py-1 rounded-full"
+      style={`background-color: ${product.accentColor}15; color: ${product.accentColor}`}
+    >
+      {formatPrice(product.price)}
+    </span>
+    <span class="text-sm text-[var(--text-secondary)] px-3 py-1 rounded-full border border-[var(--border)]">
+      {product.macosRequirement}
+    </span>
+    <span class="text-sm text-[var(--text-secondary)] px-3 py-1 rounded-full border border-[var(--border)]">
+      v{product.version}
+    </span>
+  </div>
+
+  <!-- CTA -->
+  <div class="animate-fade-up animate-fade-up-4 flex flex-col sm:flex-row items-center gap-3">
+    <a
+      href={product.appStoreUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:shadow-lg hover:-translate-y-0.5"
+      style={`background-color: ${product.accentColor}`}
+    >
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M9 1.5A7.5 7.5 0 1 1 9 16.5A7.5 7.5 0 0 1 9 1.5zM9 6v6M6 9h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Download on the App Store
+    </a>
+    <a
+      href="#features"
+      class="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text)] transition-colors px-4 py-3"
+    >
+      See all features ↓
+    </a>
+  </div>
+</section>

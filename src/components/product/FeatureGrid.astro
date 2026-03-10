@@ -1,0 +1,52 @@
+---
+import type { Product } from '../../data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+---
+
+<section id="features" class="max-w-6xl mx-auto px-6 py-20">
+  <div class="text-center mb-14 reveal">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)] mb-3">Features</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-[var(--text)] tracking-tight">
+      Everything you need.<br />Nothing you don't.
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {product.features.map((feature, i) => (
+      <div
+        class="reveal p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] hover:border-opacity-80 transition-all duration-200"
+        style={`transition-delay: ${i * 60}ms`}
+      >
+        <div
+          class="w-10 h-10 rounded-xl flex items-center justify-center text-lg mb-4"
+          style={`background-color: ${product.accentColor}15`}
+        >
+          {feature.icon}
+        </div>
+        <h3 class="font-semibold text-[var(--text)] mb-2">{feature.title}</h3>
+        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">{feature.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.05, rootMargin: '0px 0px -30px 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>

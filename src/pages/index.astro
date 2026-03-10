@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/home/HeroSection.astro';
+import ProductShowcase from '../components/home/ProductShowcase.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'smooth-mac',
+  url: 'https://smoothmac.app',
+  description: 'smooth-mac makes focused utilities for macOS. SmoothSnap for window management. SmoothPeek for file preview.',
+};
+---
+
+<BaseLayout
+  title="smooth-mac — macOS Utilities, Carefully Made"
+  description="smooth-mac makes focused utilities for macOS. SmoothSnap for window management. SmoothPeek for file preview. Built for the Mac, by Mac users."
+  schema={schema}
+>
+  <HeroSection />
+  <ProductShowcase />
+
+  <!-- Studio Values -->
+  <section class="max-w-6xl mx-auto px-6 py-20 border-t border-[var(--border)]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {[
+        {
+          title: 'Designed for macOS',
+          body: 'Not ported from Windows or iOS. Built for the Mac from the start — respecting its conventions, its shortcuts, and its users.',
+        },
+        {
+          title: 'No subscriptions',
+          body: 'One-time purchase. Yours forever. Updates included. We believe good software should be something you own.',
+        },
+        {
+          title: 'Privacy first',
+          body: 'No analytics. No accounts. No data leaves your machine. What you do with your Mac is your business.',
+        },
+      ].map((value) => (
+        <div class="reveal">
+          <h3 class="font-semibold text-[var(--text)] mb-3">{value.title}</h3>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed">{value.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- App Store CTA -->
+  <section class="max-w-6xl mx-auto px-6 py-20 text-center">
+    <p class="text-sm text-[var(--text-secondary)] mb-3 reveal">
+      Available exclusively on the Mac App Store
+    </p>
+    <p class="text-xs text-[var(--text-secondary)] opacity-60 reveal">
+      Requires macOS 13 Ventura or later · Universal Binary (Apple Silicon + Intel)
+    </p>
+  </section>
+</BaseLayout>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+</script>

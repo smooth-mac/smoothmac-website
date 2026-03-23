@@ -51,7 +51,7 @@ export const products: Product[] = [
       { src: '/products/smoothpeek/screenshot-1.png', alt: 'SmoothPeek previewing a file' },
       { src: '/products/smoothpeek/screenshot-2.png', alt: 'SmoothPeek file navigation' },
     ],
-    price: 7.99,
+    price: 2.99,
     appStoreUrl: 'https://apps.apple.com/app/smoothpeek',
     features: [
       { icon: '📁' },

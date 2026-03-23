@@ -29,7 +29,7 @@ const alternates = getAlternateLinks('/privacy', Astro.site?.toString() ?? 'http
       {t.privacy.sections.map((section, i) => (
         <section>
           <h2 class="text-lg font-semibold text-[var(--text)] mb-2">{section.title}</h2>
-          {i === 3 ? (
+          {i === 4 ? (
             <p>
               {section.body}{' '}
               <a href="mailto:support@smoothmac.app" class="text-[var(--accent)] hover:underline">

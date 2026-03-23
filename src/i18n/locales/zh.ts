@@ -170,6 +170,10 @@ const zh: Translations = {
         body: 'smoothmac.app 使用 Cloudflare Web Analytics — 一种无需 Cookie 且不收集个人身份信息的隐私保护分析解决方案。没有追踪像素，没有第三方脚本。',
       },
       {
+        title: '系统权限',
+        body: 'SmoothPeek 仅出于以下目的请求辅助功能（Accessibility）和屏幕录制（Screen Recording）权限：检测 Dock 中的活跃应用，以及在本地设备上捕获窗口预览。通过这些权限获取的任何数据均不会被传输、存储或共享。您可以随时在"系统设置 > 隐私与安全性"中撤销这些权限。',
+      },
+      {
         title: 'App Store',
         body: '购买通过 Apple 的 Mac App Store 处理。购买过程中收集的任何数据均受 Apple 隐私政策约束。',
       },

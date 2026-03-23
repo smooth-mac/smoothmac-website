@@ -171,6 +171,10 @@ const es: Translations = {
         body: 'smoothmac.app usa Cloudflare Web Analytics — una solución de análisis que preserva la privacidad, no requiere cookies y no recopila información de identificación personal. Sin píxeles de seguimiento, sin scripts de terceros.',
       },
       {
+        title: 'Permisos del sistema',
+        body: 'SmoothPeek solicita permisos de Accesibilidad y Grabación de pantalla únicamente para detectar qué app está activa en tu Dock y capturar vistas previas de ventanas en tu dispositivo local. Ningún dato obtenido a través de estos permisos se transmite, almacena ni comparte. Puedes revocar estos permisos en cualquier momento desde Configuración del sistema > Privacidad y seguridad.',
+      },
+      {
         title: 'App Store',
         body: 'Las compras son procesadas por Apple a través de Mac App Store. La política de privacidad de Apple rige cualquier dato recopilado durante la compra.',
       },

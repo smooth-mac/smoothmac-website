@@ -171,6 +171,10 @@ const ko: Translations = {
         body: 'smoothmac.app은 Cloudflare 웹 분석을 사용합니다 — 쿠키가 필요 없고 개인 식별 정보를 수집하지 않는 개인정보 보호 분석 솔루션입니다. 추적 픽셀도, 서드파티 스크립트도 없습니다.',
       },
       {
+        title: '시스템 권한',
+        body: 'SmoothPeek은 Dock에서 활성화된 앱을 감지하고 기기 내에서 창 미리보기를 캡처하기 위한 목적으로만 손쉬운 사용(Accessibility) 및 화면 기록(Screen Recording) 권한을 요청합니다. 이 권한을 통해 수집된 데이터는 전송, 저장 또는 공유되지 않습니다. 시스템 설정 > 개인정보 보호 및 보안에서 언제든지 권한을 취소할 수 있습니다.',
+      },
+      {
         title: 'App Store',
         body: '구매는 Mac App Store를 통해 Apple이 처리합니다. 구매 시 수집되는 데이터에는 Apple의 개인정보 정책이 적용됩니다.',
       },

@@ -61,7 +61,7 @@ export const products: Product[] = [
       { icon: '🚀' },
       { icon: '⌨️' },
     ],
-    macosRequirement: 'macOS 13 Ventura or later',
+    macosRequirement: 'macOS 14 Sonoma or later',
     version: '1.0',
     accentColor: '#ff9f0a',
     accentColorClass: 'smoothpeek',

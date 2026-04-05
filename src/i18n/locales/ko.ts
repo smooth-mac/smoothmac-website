@@ -73,6 +73,17 @@ const ko: Translations = {
         { title: 'macOS를 위해 만들어짐', description: 'Windows 이식이 아닙니다. macOS가 실제로 작동하는 방식에 맞게 처음부터 설계되었습니다.' },
         { title: '즉각적인 반응', description: '16ms 미만의 응답 시간. 원하는 순간에 스냅이 일어납니다.' },
       ],
+      philosophy:
+        'macOS는 거의 모든 면에서 아름답게 설계되어 있습니다.\n윈도우 관리는 늘 조용한 예외였습니다.\n\n모든 해결책은 운영체제와 싸우거나, 아무도 요청하지 않은 수십 가지 기능을 제공합니다. SmoothSnap은 단 하나의 일이 제대로 작동해야 하기 때문에 존재합니다: 원하는 곳에 즉시, 생각 없이 윈도우를 배치하는 것.\n\n그 이상도, 그 이하도 아닙니다. 그저 Mac이 원래 작동해야 할 방식으로.',
+      protocol: {
+        requirement: 'macOS 13 Ventura 이상',
+        architecture: '유니버설 바이너리 (Apple Silicon + Intel)',
+        permissions: ['손쉬운 사용 (Accessibility)'],
+        permissionPurpose:
+          'SmoothSnap은 다른 앱의 윈도우를 이동하고 크기를 조정하기 위해 손쉬운 사용 권한이 필요합니다. 이것이 유일한 권한 요청이며, 데이터는 기기 밖으로 나가지 않습니다.',
+        price: '₩9,900 · 일회성 구매 · 구독 없음',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: '스냅할 준비가 되셨나요?',
       ctaSubtext: '일회성 구매',
       crossSell: '이것도 확인해 보세요',
@@ -102,6 +113,17 @@ const ko: Translations = {
         { title: '100ms 응답', description: '마우스를 올리는 순간 미리보기가 나타납니다. 로딩 없음, 딜레이 없음.' },
         { title: '키보드 친화적', description: '탭으로 창을 탐색하고 엔터로 전환. 마우스 없이도 완벽하게 작동합니다.' },
       ],
+      philosophy:
+        'SmoothPeek은 잘못된 창을 클릭하는 작은 마찰이 하루에 수십 번 반복된다는 사실에서 시작했습니다. macOS의 독은 훌륭하지만, 창 안에 무엇이 있는지는 보여주지 않습니다. SmoothPeek이 그 공백을 채웁니다. 단 한 번의 호버. 한 번의 눈빛. 올바른 창으로의 정확한 이동. 좋은 도구는 존재감을 잃습니다.',
+      protocol: {
+        requirement: 'macOS 14 Sonoma 이상',
+        architecture: '유니버설 바이너리 (Apple Silicon + Intel)',
+        permissions: ['손쉬운 사용 (Accessibility)', '화면 녹화 (Screen Recording)'],
+        permissionPurpose:
+          '손쉬운 사용 권한은 독 아이콘의 호버 이벤트를 감지하는 데 사용됩니다. 화면 녹화 권한은 기기 내에서 창 썸네일을 캡처합니다. 데이터는 전송되거나 저장되지 않습니다.',
+        price: '₩3,900 · 일회성 구매 · 구독 없음',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: '당신의 독을 업그레이드하세요.',
       ctaSubtext: '일회성 구매',
       crossSell: '이것도 확인해 보세요',

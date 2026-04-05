@@ -1,0 +1,57 @@
+---
+import type { Product } from '../../data/products';
+import { getTranslations } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
+
+interface Props {
+  product: Product;
+  locale?: Locale;
+}
+
+const { product, locale = 'en' } = Astro.props;
+const t = getTranslations(locale);
+const pt = t.products[product.slug as 'smoothsnap' | 'smoothpeek'];
+
+// Split on double newlines for paragraph breaks
+const paragraphs = pt.philosophy.split('\n\n').filter(Boolean);
+---
+
+<section
+  class="relative py-24 overflow-hidden"
+  data-product={product.slug === 'smoothpeek' ? 'peek' : 'snap'}
+>
+  <!-- Ambient glow -->
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full blur-3xl opacity-8 pointer-events-none"
+    style={`background: radial-gradient(ellipse, ${product.accentColor}18, transparent 70%)`}
+  ></div>
+
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <!-- Overline -->
+    <p
+      class="reveal text-[0.6875rem] font-semibold tracking-[0.08em] uppercase mb-6"
+      style={`color: ${product.accentColor}`}
+    >
+      Philosophy
+    </p>
+
+    <!-- Manifesto paragraphs -->
+    <div class="space-y-5">
+      {paragraphs.map((para, i) => (
+        <p
+          class={`reveal text-[var(--color-text-secondary)] leading-relaxed ${i === 0 ? 'text-xl md:text-2xl font-medium text-[var(--color-text-primary)]' : 'text-lg'}`}
+          style={`transition-delay: ${i * 80}ms`}
+        >
+          {para}
+        </p>
+      ))}
+    </div>
+
+    <!-- Decorative separator -->
+    <div class="reveal mt-12 flex items-center justify-center gap-3 opacity-40">
+      <div class="h-px w-16 rounded-full" style={`background: ${product.accentColor}`}></div>
+      <div class="w-1.5 h-1.5 rounded-full" style={`background: ${product.accentColor}`}></div>
+      <div class="h-px w-16 rounded-full" style={`background: ${product.accentColor}`}></div>
+    </div>
+  </div>
+</section>

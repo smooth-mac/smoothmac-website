@@ -5,11 +5,22 @@ export interface FeatureTranslation {
   description: string;
 }
 
+export interface ProtocolSpec {
+  requirement: string;
+  architecture: string;
+  permissions: string[];
+  permissionPurpose: string;
+  price: string;
+  distribution: string;
+}
+
 export interface ProductTranslations {
   tagline: string;
   description: string;
   longDescription: string;
   features: FeatureTranslation[];
+  philosophy: string;
+  protocol: ProtocolSpec;
   ctaHeadline: string;
   ctaSubtext: string;
   crossSell: string;

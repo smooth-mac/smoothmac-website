@@ -61,25 +61,54 @@ const en: Translations = {
   },
   products: {
     smoothsnap: {
-      tagline: 'Window snapping that feels native.',
-      description: 'Window snapping for macOS — fast, keyboard-driven, and invisible until you need it.',
+      tagline: 'Snap into place.',
+      description: 'SmoothSnap puts 11 snap zones at your fingertips. Drag a window to any edge — or hit a shortcut — and it lands exactly where you want it.',
       longDescription:
-        'macOS has never had window snapping that felt right. SmoothSnap fills that gap without fighting the OS. It works with your existing keyboard shortcuts, stays completely out of the way, and behaves exactly as you would expect from an app Apple might have made.',
+        'macOS is beautifully designed in almost every way. Window management has always been the quiet exception. Every workaround either fights the operating system or ships a dozen features nobody asked for. SmoothSnap exists because one thing should simply work: moving your windows exactly where you want them, immediately, without thinking about it.',
       features: [
-        { title: 'Keyboard-first', description: 'Snap windows with shortcuts that feel natural — no new muscle memory required.' },
-        { title: 'Stage Manager aware', description: 'Works seamlessly alongside Stage Manager and multiple displays.' },
-        { title: 'Notch-aware', description: 'Windows snap correctly around the MacBook notch with no overlap.' },
-        { title: 'Zero menubar clutter', description: 'No icon in your menubar, no preferences sprawl. Just snapping.' },
-        { title: 'Built for macOS', description: 'Not a Windows port. Designed from scratch for how macOS actually works.' },
-        { title: 'Instant response', description: 'Sub-16ms response time. Snapping happens the moment you want it.' },
+        {
+          title: 'Keyboard-First',
+          description: 'Snap windows with shortcuts that feel like they were always there — no new muscle memory required, no chord gymnastics.',
+        },
+        {
+          title: 'Multi-Display Ready',
+          description: 'Works seamlessly across multiple monitors and alongside Stage Manager. Move a window anywhere in your setup without missing a beat.',
+        },
+        {
+          title: 'Notch-Aware',
+          description: 'Windows snap correctly around the MacBook notch with no overlap. SmoothSnap knows where your screen actually is.',
+        },
+        {
+          title: 'Zero Clutter',
+          description: 'No icon in your menu bar, no UI in your face. SmoothSnap lives in the background and appears only when you summon it.',
+        },
+        {
+          title: 'Built for macOS',
+          description: 'Not ported from another OS. Written in Swift with native AppKit from day one — it respects macOS conventions because it is macOS.',
+        },
+        {
+          title: 'Instant Response',
+          description: 'Sub-16ms snap response time. There is no perceptible lag between the moment you decide where a window should go and the moment it gets there.',
+        },
       ],
+      philosophy:
+        'macOS is beautifully designed in almost every way.\nWindow management has always been the quiet exception.\n\nEvery workaround either fights the operating system or ships a dozen features nobody asked for. SmoothSnap exists because one thing should simply work: moving your windows exactly where you want them, immediately, without thinking about it.\n\nNothing more. Nothing less. Just the Mac, working the way it should.',
+      protocol: {
+        requirement: 'macOS 13 Ventura or later',
+        architecture: 'Universal Binary (Apple Silicon + Intel)',
+        permissions: ['Accessibility'],
+        permissionPurpose:
+          'SmoothSnap needs Accessibility permission to move and resize windows that belong to other apps. This is the only permission it requests. No data leaves your device.',
+        price: '$9.99 · One-time purchase · No subscription',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: 'Ready to snap?',
       ctaSubtext: 'One-time purchase',
       crossSell: 'Also check out',
       crossSellTagline: 'See before you switch.',
       seo: {
         title: 'SmoothSnap — Window Snapping for macOS',
-        description: 'Window snapping for macOS — fast, keyboard-driven, and invisible until you need it.',
+        description: 'SmoothSnap puts 11 snap zones at your fingertips. Fast, keyboard-driven window management for macOS. One-time purchase.',
       },
       screenshotAlts: ['SmoothSnap window snapping in action', 'SmoothSnap multi-display layout'],
     },
@@ -87,10 +116,16 @@ const en: Translations = {
       tagline: 'See before you switch.',
       description: 'Hover over any Dock icon to instantly preview all open windows — then click to switch with confidence.',
       longDescription:
-        "Clicking the wrong window wastes more of your day than you think. SmoothPeek shows you live previews of every open window the moment you hover over a Dock icon — so you always land exactly where you meant to go.",
+        'Clicking the wrong window wastes more of your day than you think. SmoothPeek shows you live previews of every open window the moment you hover over a Dock icon — so you always land exactly where you meant to go.',
       features: [
-        { title: 'Instant Dock Preview', description: 'Hover any Dock icon to see live thumbnails of every open window — no clicking required.' },
-        { title: 'All Windows at Once', description: 'Every open window for an app, shown side by side. Find the right one in a glance.' },
+        {
+          title: 'Instant Dock Preview',
+          description: 'Hover any Dock icon to see live thumbnails of every open window — no clicking required.',
+        },
+        {
+          title: 'All Windows at Once',
+          description: 'Every open window for an app, shown side by side. Find the right one in a glance.',
+        },
         {
           title: 'One-click Focus',
           description: 'Tap any thumbnail to bring that exact window to the front. No hunting through app switchers.',
@@ -99,15 +134,32 @@ const en: Translations = {
           title: 'Beautifully Native',
           description: 'Smooth fade animations and a visual design that feels like it belongs in macOS.',
         },
-        { title: '100ms Response', description: 'Previews appear the instant you hover. No loading, no delay, no spinner.' },
-        { title: 'Keyboard Friendly', description: 'Tab between windows and press Enter to switch. Works entirely without a mouse.' },
+        {
+          title: '100ms Response',
+          description: 'Previews appear the instant you hover. No loading, no delay, no spinner.',
+        },
+        {
+          title: 'Keyboard Friendly',
+          description: 'Tab between windows and press Enter to switch. Works entirely without a mouse.',
+        },
       ],
+      philosophy:
+        'We built SmoothPeek because clicking the wrong window is a friction you repeat dozens of times a day. macOS has always had a brilliant Dock — but it does not show you what is inside. SmoothPeek fills that gap with a single hover. One glance. One click. The right window, every time. Good tools are the ones you stop noticing.',
+      protocol: {
+        requirement: 'macOS 14 Sonoma or later',
+        architecture: 'Universal Binary (Apple Silicon + Intel)',
+        permissions: ['Accessibility', 'Screen Recording'],
+        permissionPurpose:
+          'Accessibility permission is used to detect hover events on Dock icons. Screen Recording captures live window thumbnails locally. No data is transmitted or stored — everything stays on your Mac.',
+        price: '$2.99 · One-time purchase · No subscription',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: 'Your Dock, elevated.',
       ctaSubtext: 'One-time purchase',
       crossSell: 'Also check out',
       crossSellTagline: 'Window snapping that feels native.',
       seo: {
-        title: 'SmoothPeek — Window Previews from the Dock',
+        title: 'SmoothPeek — Dock Window Previews for macOS',
         description: 'Hover over any Dock icon to instantly preview all open windows. Click to switch with precision. Requires macOS 14 Sonoma or later.',
       },
       screenshotAlts: ['SmoothPeek showing window previews on Dock hover', 'SmoothPeek multi-window preview panel'],

@@ -73,6 +73,17 @@ const es: Translations = {
         { title: 'Hecho para macOS', description: 'No es un port de Windows. Diseñado desde cero para cómo funciona realmente macOS.' },
         { title: 'Respuesta instantánea', description: 'Tiempo de respuesta inferior a 16ms. El ajuste ocurre en el momento en que lo deseas.' },
       ],
+      philosophy:
+        'macOS está bellamente diseñado en casi todos los aspectos.\nLa gestión de ventanas siempre ha sido la excepción silenciosa.\n\nCada solución o bien lucha contra el sistema operativo o incluye una docena de funciones que nadie pidió. SmoothSnap existe porque una cosa debería simplemente funcionar: mover tus ventanas exactamente donde quieres, de inmediato, sin pensar en ello.\n\nNada más. Nada menos. Solo el Mac, funcionando como debería.',
+      protocol: {
+        requirement: 'macOS 13 Ventura o posterior',
+        architecture: 'Binario universal (Apple Silicon + Intel)',
+        permissions: ['Accesibilidad'],
+        permissionPurpose:
+          'SmoothSnap necesita el permiso de Accesibilidad para mover y cambiar el tamaño de las ventanas de otras apps. Es el único permiso que solicita. Ningún dato sale de tu dispositivo.',
+        price: '$4.99 · Compra única · Sin suscripción',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: '¿Listo para ajustar?',
       ctaSubtext: 'Compra única',
       crossSell: 'Échale un vistazo también a',
@@ -102,6 +113,17 @@ const es: Translations = {
         { title: 'Respuesta en 100ms', description: 'Las vistas previas aparecen en el instante en que pasas el cursor. Sin carga, sin retraso, sin indicador.' },
         { title: 'Compatible con teclado', description: 'Muévete entre ventanas con Tab y presiona Enter para cambiar. Funciona completamente sin ratón.' },
       ],
+      philosophy:
+        'Construimos SmoothPeek porque hacer clic en la ventana incorrecta es una fricción que se repite decenas de veces al día. macOS siempre ha tenido un Dock brillante — pero no muestra lo que hay dentro. SmoothPeek llena ese hueco con un simple hover. Una mirada. Un clic. La ventana correcta, siempre. Las buenas herramientas son las que dejas de notar.',
+      protocol: {
+        requirement: 'macOS 14 Sonoma o posterior',
+        architecture: 'Binario universal (Apple Silicon + Intel)',
+        permissions: ['Accesibilidad', 'Grabación de pantalla'],
+        permissionPurpose:
+          'El permiso de Accesibilidad detecta eventos de hover en los iconos del Dock. La Grabación de pantalla captura miniaturas de ventanas localmente. Ningún dato se transmite ni almacena.',
+        price: '$2.99 · Compra única · Sin suscripción',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: 'Tu Dock, mejorado.',
       ctaSubtext: 'Compra única',
       crossSell: 'Échale un vistazo también a',

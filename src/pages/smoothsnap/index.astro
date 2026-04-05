@@ -2,6 +2,8 @@
 import ProductLayout from '../../layouts/ProductLayout.astro';
 import ProductHero from '../../components/product/ProductHero.astro';
 import FeatureGrid from '../../components/product/FeatureGrid.astro';
+import PhilosophySection from '../../components/product/PhilosophySection.astro';
+import ProtocolSection from '../../components/product/ProtocolSection.astro';
 import DownloadButton from '../../components/product/DownloadButton.astro';
 import { getProduct } from '../../data/products';
 import { getTranslations, getLocalizedPath } from '../../i18n/index';
@@ -18,19 +20,23 @@ const product = getProduct('smoothsnap')!;
 
   <!-- Long description -->
   <section class="max-w-3xl mx-auto px-6 py-12 text-center">
-    <p class="text-lg text-[var(--text-secondary)] leading-relaxed reveal">
+    <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed reveal">
       {pt.longDescription}
     </p>
   </section>
 
   <FeatureGrid product={product} locale={locale} />
 
+  <PhilosophySection product={product} locale={locale} />
+
+  <ProtocolSection product={product} locale={locale} />
+
   <!-- Final CTA -->
-  <section class="max-w-6xl mx-auto px-6 py-20 text-center border-t border-[var(--border)]">
-    <h2 class="text-2xl font-bold text-[var(--text)] mb-3 reveal">
+  <section class="max-w-6xl mx-auto px-6 py-20 text-center border-t" style="border-color: var(--color-bg-glass-border)">
+    <h2 class="text-2xl font-bold text-[var(--color-text-primary)] mb-3 reveal">
       {pt.ctaHeadline}
     </h2>
-    <p class="text-[var(--text-secondary)] mb-8 reveal">
+    <p class="text-[var(--color-text-secondary)] mb-8 reveal">
       {t.product.onePurchase} · {product.macosRequirement}
     </p>
     <div class="reveal">
@@ -38,9 +44,9 @@ const product = getProduct('smoothsnap')!;
     </div>
 
     <!-- Cross-sell -->
-    <p class="mt-10 text-sm text-[var(--text-secondary)] reveal">
+    <p class="mt-10 text-sm text-[var(--color-text-secondary)] reveal">
       {pt.crossSell}
-      <a href={getLocalizedPath('/smoothpeek', locale)} class="text-[var(--accent)] hover:underline">SmoothPeek</a>
+      <a href={getLocalizedPath('/smoothpeek', locale)} style={`color: ${product.accentColor}`} class="hover:underline">SmoothPeek</a>
       — {pt.crossSellTagline}
     </p>
   </section>

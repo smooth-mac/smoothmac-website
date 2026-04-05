@@ -72,6 +72,17 @@ const ja: Translations = {
         { title: 'macOSのために作られた', description: 'Windowsの移植ではありません。macOSの実際の動作に合わせてゼロから設計。' },
         { title: '即座の反応', description: '16ms未満の応答時間。望んだ瞬間にスナップが起こります。' },
       ],
+      philosophy:
+        'macOSはほぼあらゆる面で美しく設計されています。\nウィンドウ管理は、常に静かな例外でした。\n\nすべての回避策は、OSと戦うか、誰も求めていない十数の機能を提供するかのどちらかです。SmoothSnapは、ひとつのことがただ機能すべきだから存在します: ウィンドウを望む場所に即座に、何も考えずに配置すること。\n\nそれ以上でも、それ以下でもありません。Macが本来あるべき姿で動く、ただそれだけ。',
+      protocol: {
+        requirement: 'macOS 13 Ventura以降',
+        architecture: 'ユニバーサルバイナリ (Apple Silicon + Intel)',
+        permissions: ['アクセシビリティ'],
+        permissionPurpose:
+          'SmoothSnapは他のアプリのウィンドウを移動・リサイズするためにアクセシビリティ権限が必要です。これが唯一の権限要求であり、データはデバイスを離れません。',
+        price: '¥1,500 · 買い切り · サブスクリプションなし',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: 'スナップする準備はできていますか？',
       ctaSubtext: '買い切り',
       crossSell: 'こちらもチェック',
@@ -101,6 +112,17 @@ const ja: Translations = {
         { title: '100msの応答速度', description: 'ホバーした瞬間にプレビューが表示されます。ローディングなし、遅延なし、スピナーなし。' },
         { title: 'キーボード対応', description: 'Tabでウィンドウを移動し、Enterで切り替え。マウスなしで完全に操作できます。' },
       ],
+      philosophy:
+        'SmoothPeekは、間違ったウィンドウをクリックするという小さな摩擦が一日に何十回も繰り返されるという事実から生まれました。macOSのDockは優れていますが、ウィンドウの中身は見せてくれません。SmoothPeekがその空白を埋めます。たった一度のホバー。一瞥。正確なウィンドウへの移動。良いツールは存在感を消します。',
+      protocol: {
+        requirement: 'macOS 14 Sonoma以降',
+        architecture: 'ユニバーサルバイナリ (Apple Silicon + Intel)',
+        permissions: ['アクセシビリティ', '画面収録'],
+        permissionPurpose:
+          'アクセシビリティ権限はDockアイコンのホバーイベントを検知するために使用します。画面収録権限はデバイス上でウィンドウサムネイルをキャプチャします。データは送信・保存されません。',
+        price: '¥500 · 買い切り · サブスクリプションなし',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: 'あなたのDockを、もっとスマートに。',
       ctaSubtext: '買い切り',
       crossSell: 'こちらもチェック',

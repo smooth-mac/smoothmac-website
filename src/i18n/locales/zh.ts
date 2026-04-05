@@ -72,6 +72,17 @@ const zh: Translations = {
         { title: '为 macOS 而生', description: '不是 Windows 移植版。从零开始为 macOS 的实际运作方式设计。' },
         { title: '即时响应', description: '响应时间低于 16ms。你一想要，吸附就发生。' },
       ],
+      philosophy:
+        'macOS 在几乎所有方面都经过精心设计。\n窗口管理始终是个安静的例外。\n\n每种变通方案要么与操作系统对抗，要么附带了一堆没人要求的功能。SmoothSnap 的存在，是因为有一件事应该直接奏效：把窗口放到你想要的位置，立刻，不需要思考。\n\n仅此而已。Mac，按照它本应有的方式工作。',
+      protocol: {
+        requirement: 'macOS 13 Ventura 或更高版本',
+        architecture: '通用二进制 (Apple Silicon + Intel)',
+        permissions: ['辅助功能'],
+        permissionPurpose:
+          'SmoothSnap 需要辅助功能权限来移动和调整其他应用的窗口大小。这是唯一请求的权限，数据不会离开你的设备。',
+        price: '¥68 · 一次性购买 · 无订阅',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: '准备好吸附了吗？',
       ctaSubtext: '一次性购买',
       crossSell: '还可以看看',
@@ -101,6 +112,17 @@ const zh: Translations = {
         { title: '100ms 响应', description: '悬停瞬间即现预览，无加载、无延迟、无转圈。' },
         { title: '键盘友好', description: '用 Tab 在窗口间切换，按 Enter 跳转。完全无需鼠标。' },
       ],
+      philosophy:
+        '我们构建 SmoothPeek，是因为点错窗口的小摩擦每天会重复几十次。macOS 的 Dock 非常出色——但它不告诉你里面是什么。SmoothPeek 用一次悬停填补了这个空白。一瞥。一次点击。每次都是正确的窗口。好工具是你不再注意到的工具。',
+      protocol: {
+        requirement: 'macOS 14 Sonoma 或更高版本',
+        architecture: '通用二进制 (Apple Silicon + Intel)',
+        permissions: ['辅助功能', '屏幕录制'],
+        permissionPurpose:
+          '辅助功能权限用于检测 Dock 图标的悬停事件。屏幕录制权限在本地捕获窗口缩略图。数据不会被传输或存储，一切都在你的 Mac 上处理。',
+        price: '¥18 · 一次性购买 · 无订阅',
+        distribution: 'Mac App Store',
+      },
       ctaHeadline: '让你的 Dock 更聪明。',
       ctaSubtext: '一次性购买',
       crossSell: '还可以看看',

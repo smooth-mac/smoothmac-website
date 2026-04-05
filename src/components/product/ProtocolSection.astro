@@ -1,0 +1,75 @@
+---
+import type { Product } from '../../data/products';
+import { getTranslations } from '../../i18n/index';
+import type { Locale } from '../../i18n/types';
+
+interface Props {
+  product: Product;
+  locale?: Locale;
+}
+
+const { product, locale = 'en' } = Astro.props;
+const t = getTranslations(locale);
+const pt = t.products[product.slug as 'smoothsnap' | 'smoothpeek'];
+const proto = pt.protocol;
+
+const specs = [
+  { label: 'Requires', value: proto.requirement },
+  { label: 'Architecture', value: proto.architecture },
+  { label: 'Permissions', value: proto.permissions.join(', ') },
+  { label: 'Distribution', value: proto.distribution },
+  { label: 'Pricing', value: proto.price },
+];
+---
+
+<section
+  class="relative py-20 border-t"
+  style="border-color: var(--color-bg-glass-border)"
+  data-product={product.slug === 'smoothpeek' ? 'peek' : 'snap'}
+>
+  <div class="max-w-4xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="text-center mb-12 reveal">
+      <p
+        class="text-[0.6875rem] font-semibold tracking-[0.08em] uppercase mb-3"
+        style={`color: ${product.accentColor}`}
+      >
+        System Requirements
+      </p>
+      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-text-primary)] tracking-tight">
+        Built for your Mac.
+      </h2>
+    </div>
+
+    <!-- Specs grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+      {specs.map((spec, i) => (
+        <div
+          class="reveal card-glass"
+          style={`transition-delay: ${i * 60}ms; padding: 1.25rem 1.5rem`}
+        >
+          <p class="text-[0.6875rem] font-semibold tracking-[0.06em] uppercase text-[var(--color-text-tertiary)] mb-1">
+            {spec.label}
+          </p>
+          <p class="text-sm font-medium text-[var(--color-text-primary)] leading-snug">
+            {spec.value}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Permission explanation -->
+    <div
+      class="reveal card-glass text-sm text-[var(--color-text-secondary)] leading-relaxed"
+      style={`border-color: ${product.accentColor}30; padding: 1.5rem`}
+    >
+      <span
+        class="inline-block text-[0.6875rem] font-semibold tracking-[0.06em] uppercase mb-2 block"
+        style={`color: ${product.accentColor}`}
+      >
+        About Permissions
+      </span>
+      {proto.permissionPurpose}
+    </div>
+  </div>
+</section>

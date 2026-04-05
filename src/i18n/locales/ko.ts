@@ -76,7 +76,7 @@ const ko: Translations = {
       ctaHeadline: '스냅할 준비가 되셨나요?',
       ctaSubtext: '일회성 구매',
       crossSell: '이것도 확인해 보세요',
-      crossSellTagline: 'Quick Look, 더욱 강력하게.',
+      crossSellTagline: '전환하기 전에, 먼저 보세요.',
       seo: {
         title: 'SmoothSnap — macOS 윈도우 스냅 앱',
         description: 'macOS용 윈도우 스냅 — 빠르고, 키보드 중심이며, 필요할 때만 나타납니다.',
@@ -84,33 +84,33 @@ const ko: Translations = {
       screenshotAlts: ['SmoothSnap 윈도우 스냅 동작', 'SmoothSnap 멀티 디스플레이 레이아웃'],
     },
     smoothpeek: {
-      tagline: 'Quick Look, 더욱 강력하게.',
-      description: 'SmoothPeek은 Quick Look에 두 번째 의견을 제공합니다 — 더 많은 파일 형식, 더 부드러운 탐색.',
+      tagline: '전환하기 전에, 먼저 보세요.',
+      description: '독 아이콘에 마우스를 올리면 열린 창을 모두 즉시 미리볼 수 있습니다. 클릭으로 정확히 원하는 곳으로 이동하세요.',
       longDescription:
-        '파일 위에 마우스를 올리면 즉시 내용을 알고 싶죠. SmoothPeek은 더 많은 파일 형식 지원, 파일 간의 유연한 탐색, 서드파티 앱이라는 것을 잊게 만드는 네이티브 경험으로 Quick Look을 확장합니다.',
+        '잘못된 창을 클릭하는 실수가 하루에 수십 번 반복됩니다. SmoothPeek은 독 아이콘에 마우스를 올리는 순간 모든 열린 창의 라이브 미리보기를 보여줍니다 — 항상 정확히 원하는 곳에 도달할 수 있게 해줍니다.',
       features: [
-        { title: '더 많은 파일 형식', description: 'Quick Look이 지원하지 않는 형식 미리보기 — 코드 파일, 아카이브, 폰트 등.' },
-        { title: '닫지 않고 탐색', description: '미리보기가 열린 상태에서 폴더의 파일 간을 이동합니다.' },
+        { title: '즉각적인 독 미리보기', description: '독 아이콘에 마우스를 올리면 모든 열린 창의 라이브 썸네일이 즉시 나타납니다.' },
+        { title: '모든 창 한눈에', description: '앱의 모든 열린 창이 나란히 표시됩니다. 원하는 창을 즉시 찾으세요.' },
         {
-          title: 'Quick Look이 되는 곳 어디서나',
-          description: 'Finder, 열기 대화상자, 데스크탑 — Quick Look이 가능한 모든 곳에서 SmoothPeek이 향상됩니다.',
+          title: '원클릭 전환',
+          description: '썸네일을 클릭하면 해당 창이 바로 앞으로 옵니다. 앱 전환기를 뒤질 필요 없습니다.',
         },
         {
-          title: '완전히 네이티브한 느낌',
-          description: 'Quick Look과 동일한 시각 언어를 사용합니다 — 어색한 전환이나 이질적인 UI가 없습니다.',
+          title: '완벽한 네이티브 감성',
+          description: '부드러운 페이드 애니메이션과 macOS에 자연스럽게 녹아드는 디자인.',
         },
-        { title: '즉각적인 미리보기', description: '로딩 스피너 없음. 스페이스를 누르는 순간 파일이 나타납니다.' },
-        { title: '키보드만으로 작업', description: '키보드만으로 파일을 탐색하고, 닫고, 열 수 있습니다.' },
+        { title: '100ms 응답', description: '마우스를 올리는 순간 미리보기가 나타납니다. 로딩 없음, 딜레이 없음.' },
+        { title: '키보드 친화적', description: '탭으로 창을 탐색하고 엔터로 전환. 마우스 없이도 완벽하게 작동합니다.' },
       ],
-      ctaHeadline: '내부를 확인하세요.',
+      ctaHeadline: '당신의 독을 업그레이드하세요.',
       ctaSubtext: '일회성 구매',
       crossSell: '이것도 확인해 보세요',
       crossSellTagline: '네이티브처럼 느껴지는 윈도우 스냅.',
       seo: {
-        title: 'SmoothPeek — macOS Quick Look 향상 앱',
-        description: 'SmoothPeek은 Quick Look에 두 번째 의견을 제공합니다 — 더 많은 파일 형식, 더 부드러운 탐색.',
+        title: 'SmoothPeek — 독 창 미리보기 앱',
+        description: '독 아이콘에 마우스를 올려 모든 열린 창을 즉시 미리보세요. 클릭으로 정확히 원하는 창으로 이동. macOS 14 Sonoma 이상 필요.',
       },
-      screenshotAlts: ['SmoothPeek 파일 미리보기', 'SmoothPeek 파일 탐색'],
+      screenshotAlts: ['SmoothPeek 독 호버 창 미리보기', 'SmoothPeek 다중 창 미리보기 패널'],
     },
   },
   support: {
@@ -135,16 +135,16 @@ const ko: Translations = {
     smoothpeek: {
       faqs: [
         {
-          q: 'SmoothPeek은 어떤 파일 형식을 추가로 지원하나요?',
-          a: 'SmoothPeek은 코드 파일, 마크다운, 아카이브, 폰트 등의 미리보기를 추가합니다 — 전체 목록은 앱 내에서 확인할 수 있습니다.',
+          q: 'SmoothPeek은 어떻게 작동하나요?',
+          a: '독 아이콘에 마우스를 올리면 해당 앱의 모든 열린 창 썸네일이 담긴 패널이 표시됩니다. 썸네일을 클릭하면 즉시 해당 창으로 전환됩니다.',
         },
         {
-          q: 'Quick Look을 대체하나요?',
-          a: 'SmoothPeek은 Quick Look을 확장합니다 — 대체하지 않습니다. 스페이스 키를 평소처럼 사용하면 됩니다.',
+          q: '어떤 macOS 버전을 지원하나요?',
+          a: 'SmoothPeek은 macOS 14 Sonoma 이상이 필요합니다. Apple Silicon과 Intel Mac 모두에서 네이티브로 실행됩니다.',
         },
         {
-          q: '서드파티 파일 관리자와 호환되나요?',
-          a: 'SmoothPeek은 Quick Look이 되는 곳 어디서나 작동합니다. Quick Look API를 사용하는 서드파티 Finder 대안 포함.',
+          q: '왜 접근성 및 화면 녹화 권한이 필요한가요?',
+          a: '접근성 권한은 독 아이콘의 호버 이벤트를 감지하는 데 사용됩니다. 화면 녹화 권한은 로컬 기기에서 창 썸네일을 캡처하는 데 사용됩니다. 데이터는 전송되거나 저장되지 않으며 모든 처리는 Mac 내부에서 이루어집니다.',
         },
       ],
     },

@@ -47,7 +47,7 @@ const es: Translations = {
     seo: {
       title: 'smooth-mac — Utilidades para macOS, cuidadosamente hechas',
       description:
-        'smooth-mac crea utilidades enfocadas para macOS. SmoothSnap para gestión de ventanas. SmoothPeek para previsualizar archivos.',
+        'smooth-mac crea utilidades enfocadas para macOS. SmoothSnap para gestión de ventanas. SmoothPeek para previsualizar ventanas desde el Dock.',
     },
   },
   product: {
@@ -76,7 +76,7 @@ const es: Translations = {
       ctaHeadline: '¿Listo para ajustar?',
       ctaSubtext: 'Compra única',
       crossSell: 'Échale un vistazo también a',
-      crossSellTagline: 'Quick Look, elevado.',
+      crossSellTagline: 'Mira antes de cambiar.',
       seo: {
         title: 'SmoothSnap — Ajuste de ventanas para macOS',
         description: 'Ajuste de ventanas para macOS — rápido, controlado por teclado e invisible hasta que lo necesitas.',
@@ -84,33 +84,33 @@ const es: Translations = {
       screenshotAlts: ['SmoothSnap ajustando ventanas', 'SmoothSnap con múltiples pantallas'],
     },
     smoothpeek: {
-      tagline: 'Quick Look, elevado.',
-      description: 'SmoothPeek le da a Quick Look una segunda opinión — más tipos de archivos, navegación más suave.',
+      tagline: 'Mira antes de cambiar.',
+      description: 'Pasa el cursor sobre cualquier icono del Dock para previsualizar al instante todas las ventanas abiertas — luego haz clic para cambiar con precisión.',
       longDescription:
-        'Pasas el cursor sobre un archivo y quieres saber qué hay dentro — al instante. SmoothPeek extiende Quick Look con soporte para más tipos de archivos, navegación fluida entre archivos y una experiencia tan nativa que olvidarás que es una app de terceros.',
+        'Hacer clic en la ventana equivocada desperdicia más tiempo del que crees. SmoothPeek muestra vistas previas en vivo de cada ventana abierta en el momento en que pasas el cursor sobre un icono del Dock — para que siempre llegues exactamente a donde querías.',
       features: [
-        { title: 'Más tipos de archivo', description: 'Previsualiza formatos que Quick Look ignora — archivos de código, archivos comprimidos, fuentes y más.' },
-        { title: 'Navega sin cerrar', description: 'Muévete entre archivos en una carpeta mientras la previsualización sigue abierta.' },
+        { title: 'Vista previa instantánea del Dock', description: 'Pasa el cursor sobre cualquier icono del Dock para ver miniaturas en vivo de todas las ventanas abiertas — sin necesidad de hacer clic.' },
+        { title: 'Todas las ventanas a la vez', description: 'Todas las ventanas abiertas de una app, mostradas una al lado de la otra. Encuentra la correcta de un vistazo.' },
         {
-          title: 'Funciona donde Quick Look funciona',
-          description: 'Finder, diálogos de apertura, escritorio — donde sea que puedas usar Quick Look, SmoothPeek lo mejora.',
+          title: 'Foco con un clic',
+          description: 'Toca cualquier miniatura para traer esa ventana al frente. Sin buscar entre cambiadores de apps.',
         },
         {
-          title: 'Se siente completamente nativo',
-          description: 'Usa el mismo lenguaje visual que Quick Look — sin transiciones bruscas ni interfaz ajena.',
+          title: 'Bellamente nativo',
+          description: 'Animaciones de desvanecimiento suaves y un diseño visual que parece pertenecer a macOS.',
         },
-        { title: 'Previsualización instantánea', description: 'Sin indicadores de carga. Los archivos aparecen en el momento en que presionas Espacio.' },
-        { title: 'Flujo de trabajo solo con teclado', description: 'Navega, cierra y abre archivos completamente desde el teclado.' },
+        { title: 'Respuesta en 100ms', description: 'Las vistas previas aparecen en el instante en que pasas el cursor. Sin carga, sin retraso, sin indicador.' },
+        { title: 'Compatible con teclado', description: 'Muévete entre ventanas con Tab y presiona Enter para cambiar. Funciona completamente sin ratón.' },
       ],
-      ctaHeadline: 'Mira qué hay dentro.',
+      ctaHeadline: 'Tu Dock, mejorado.',
       ctaSubtext: 'Compra única',
       crossSell: 'Échale un vistazo también a',
       crossSellTagline: 'Ajuste de ventanas que se siente nativo.',
       seo: {
-        title: 'SmoothPeek — Quick Look elevado para macOS',
-        description: 'SmoothPeek le da a Quick Look una segunda opinión — más tipos de archivos, navegación más suave.',
+        title: 'SmoothPeek — Vistas previas de ventanas desde el Dock',
+        description: 'Pasa el cursor sobre cualquier icono del Dock para previsualizar instantáneamente todas las ventanas abiertas. Haz clic para cambiar con precisión. Requiere macOS 14 Sonoma o posterior.',
       },
-      screenshotAlts: ['SmoothPeek previsualizando un archivo', 'SmoothPeek navegando archivos'],
+      screenshotAlts: ['SmoothPeek mostrando vistas previas de ventanas al pasar el cursor', 'SmoothPeek panel de vista previa de múltiples ventanas'],
     },
   },
   support: {
@@ -135,16 +135,16 @@ const es: Translations = {
     smoothpeek: {
       faqs: [
         {
-          q: '¿Qué tipos de archivo añade SmoothPeek?',
-          a: 'SmoothPeek añade soporte de previsualización para archivos de código, markdown, archivos comprimidos, fuentes y más — la lista completa está disponible en la app.',
+          q: '¿Cómo funciona SmoothPeek?',
+          a: 'Cuando pasas el cursor sobre un icono del Dock, SmoothPeek muestra un panel flotante con miniaturas en vivo de todas las ventanas abiertas de esa app. Haz clic en cualquier miniatura para cambiar a esa ventana al instante.',
         },
         {
-          q: '¿Reemplaza Quick Look?',
-          a: 'SmoothPeek extiende Quick Look — no lo reemplaza. Sigues usando la tecla Espacio de forma normal.',
+          q: '¿Qué versiones de macOS son compatibles?',
+          a: 'SmoothPeek requiere macOS 14 Sonoma o posterior. Funciona de forma nativa tanto en Macs con Apple Silicon como con Intel.',
         },
         {
-          q: '¿Es compatible con gestores de archivos de terceros?',
-          a: 'SmoothPeek funciona donde sea que funcione Quick Look, incluyendo alternativas a Finder de terceros que usan la API de Quick Look.',
+          q: '¿Por qué SmoothPeek necesita permisos de Accesibilidad y Grabación de pantalla?',
+          a: 'El permiso de Accesibilidad se usa para detectar eventos de cursor en los iconos del Dock. La Grabación de pantalla se usa para capturar miniaturas en vivo de ventanas en tu dispositivo local. No se transmiten ni almacenan datos — todo queda en tu Mac.',
         },
       ],
     },

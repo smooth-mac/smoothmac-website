@@ -46,7 +46,7 @@ const ja: Translations = {
     },
     seo: {
       title: 'smooth-mac — macOSユーティリティ、丁寧に作りました',
-      description: 'smooth-macはmacOS向けの集中型ユーティリティを作ります。ウィンドウ管理のSmoothSnap。ファイルプレビューのSmoothPeek。',
+      description: 'smooth-macはmacOS向けの集中型ユーティリティを作ります。ウィンドウ管理のSmoothSnap。DockウィンドウプレビューのSmoothPeek。',
     },
   },
   product: {
@@ -75,7 +75,7 @@ const ja: Translations = {
       ctaHeadline: 'スナップする準備はできていますか？',
       ctaSubtext: '買い切り',
       crossSell: 'こちらもチェック',
-      crossSellTagline: 'Quick Look、進化版。',
+      crossSellTagline: '切り替える前に、まず確認。',
       seo: {
         title: 'SmoothSnap — macOSウィンドウスナップアプリ',
         description: 'macOS用ウィンドウスナップ — 速く、キーボード中心で、必要なときだけ現れます。',
@@ -83,33 +83,33 @@ const ja: Translations = {
       screenshotAlts: ['SmoothSnapのウィンドウスナップ動作', 'SmoothSnapのマルチディスプレイレイアウト'],
     },
     smoothpeek: {
-      tagline: 'Quick Look、進化版。',
-      description: 'SmoothPeekはQuick Lookにセカンドオピニオンを与えます — より多くのファイル形式、よりスムーズなナビゲーション。',
+      tagline: '切り替える前に、まず確認。',
+      description: 'Dockアイコンにカーソルを合わせると、開いているすべてのウィンドウが即座にプレビューできます。クリックして、迷わず目的の場所へ。',
       longDescription:
-        'ファイルにホバーして、すぐに中身を知りたいですよね。SmoothPeekは、より多くのファイル形式のサポート、ファイル間のスムーズなナビゲーション、サードパーティアプリとは思えないほどネイティブな体験でQuick Lookを拡張します。',
+        '間違ったウィンドウをクリックするのは、思っているより時間の無駄です。SmoothPeekは、Dockアイコンにホバーした瞬間に、開いているすべてのウィンドウのライブプレビューを表示します — 常に正確に目的の場所に辿り着けます。',
       features: [
-        { title: 'より多くのファイル形式', description: 'Quick Lookが無視する形式をプレビュー — コードファイル、アーカイブ、フォントなど。' },
-        { title: '閉じずにナビゲート', description: 'プレビューを開いたまま、フォルダ内のファイル間を移動できます。' },
+        { title: 'Dockプレビューが瞬時に', description: 'Dockアイコンにホバーするだけで、開いているすべてのウィンドウのサムネイルが表示されます。クリック不要。' },
+        { title: 'すべてのウィンドウを一覧で', description: 'アプリの開いているウィンドウがすべて並んで表示されます。目的のウィンドウを一目で見つけられます。' },
         {
-          title: 'Quick Lookが使えるところならどこでも',
-          description: 'Finder、ファイルダイアログ、デスクトップ — Quick Lookが使える場所ならSmoothPeekが強化します。',
+          title: 'ワンクリックで切り替え',
+          description: 'サムネイルをタップするだけで、そのウィンドウが前面に来ます。Appスイッチャーを探し回る必要はありません。',
         },
         {
-          title: '完全にネイティブな感覚',
-          description: 'Quick Lookと同じビジュアル言語を使用 — 違和感のある遷移や見慣れないUIはありません。',
+          title: '完全にネイティブな美しさ',
+          description: 'スムーズなフェードアニメーションと、macOSに自然に溶け込むビジュアルデザイン。',
         },
-        { title: '即座のプレビュー', description: 'ローディングスピナーなし。スペースを押した瞬間にファイルが表示されます。' },
-        { title: 'キーボードのみのワークフロー', description: 'ファイルのナビゲート、閉じる、開くをすべてキーボードだけで操作できます。' },
+        { title: '100msの応答速度', description: 'ホバーした瞬間にプレビューが表示されます。ローディングなし、遅延なし、スピナーなし。' },
+        { title: 'キーボード対応', description: 'Tabでウィンドウを移動し、Enterで切り替え。マウスなしで完全に操作できます。' },
       ],
-      ctaHeadline: '中身を確認しましょう。',
+      ctaHeadline: 'あなたのDockを、もっとスマートに。',
       ctaSubtext: '買い切り',
       crossSell: 'こちらもチェック',
       crossSellTagline: 'ネイティブのように感じるウィンドウスナップ。',
       seo: {
-        title: 'SmoothPeek — macOS Quick Look強化アプリ',
-        description: 'SmoothPeekはQuick Lookにセカンドオピニオンを与えます — より多くのファイル形式、よりスムーズなナビゲーション。',
+        title: 'SmoothPeek — DockからウィンドウプレビューをMacで',
+        description: 'Dockアイコンにカーソルを合わせると、開いているすべてのウィンドウを瞬時にプレビュー。クリックで目的のウィンドウへ。macOS 14 Sonoma以降が必要。',
       },
-      screenshotAlts: ['SmoothPeekのファイルプレビュー', 'SmoothPeekのファイルナビゲーション'],
+      screenshotAlts: ['SmoothPeekのDockホバーウィンドウプレビュー', 'SmoothPeekの複数ウィンドウプレビューパネル'],
     },
   },
   support: {
@@ -134,16 +134,16 @@ const ja: Translations = {
     smoothpeek: {
       faqs: [
         {
-          q: 'SmoothPeekはどのファイル形式を追加でサポートしますか？',
-          a: 'SmoothPeekはコードファイル、マークダウン、アーカイブ、フォントなどのプレビューを追加します — 完全なリストはアプリ内で確認できます。',
+          q: 'SmoothPeekはどのように動作しますか？',
+          a: 'Dockアイコンにカーソルを合わせると、そのアプリの開いているすべてのウィンドウのサムネイルが入ったパネルが表示されます。サムネイルをクリックすると、そのウィンドウに即座に切り替わります。',
         },
         {
-          q: 'Quick Lookを置き換えますか？',
-          a: 'SmoothPeekはQuick Lookを拡張します — 置き換えではありません。スペースキーは通常通り使用できます。',
+          q: 'どのmacOSバージョンがサポートされていますか？',
+          a: 'SmoothPeekはmacOS 14 Sonoma以降が必要です。Apple SiliconとIntel Macの両方でネイティブに動作します。',
         },
         {
-          q: 'サードパーティのファイルマネージャーと互換性がありますか？',
-          a: 'SmoothPeekはQuick Lookが使える場所ならどこでも動作します。Quick Look APIを使うサードパーティのFinderの代替アプリも含みます。',
+          q: 'SmoothPeekがアクセシビリティと画面収録の権限を必要とするのはなぜですか？',
+          a: 'アクセシビリティ権限はDockアイコンのホバーイベントを検出するために使用されます。画面収録はデバイス上でライブウィンドウサムネイルをキャプチャするために使用されます。データは送信・保存されず、すべての処理はMac内で行われます。',
         },
       ],
     },

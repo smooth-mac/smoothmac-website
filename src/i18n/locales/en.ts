@@ -47,7 +47,7 @@ const en: Translations = {
     seo: {
       title: 'smooth-mac — macOS Utilities, Carefully Made',
       description:
-        'smooth-mac makes focused utilities for macOS. SmoothSnap for window management. SmoothPeek for file preview. Built for the Mac, by Mac users.',
+        'smooth-mac makes focused utilities for macOS. SmoothSnap for window management. SmoothPeek for Dock window previews. Built for the Mac, by Mac users.',
     },
   },
   product: {
@@ -76,7 +76,7 @@ const en: Translations = {
       ctaHeadline: 'Ready to snap?',
       ctaSubtext: 'One-time purchase',
       crossSell: 'Also check out',
-      crossSellTagline: 'Quick Look, elevated.',
+      crossSellTagline: 'See before you switch.',
       seo: {
         title: 'SmoothSnap — Window Snapping for macOS',
         description: 'Window snapping for macOS — fast, keyboard-driven, and invisible until you need it.',
@@ -84,33 +84,33 @@ const en: Translations = {
       screenshotAlts: ['SmoothSnap window snapping in action', 'SmoothSnap multi-display layout'],
     },
     smoothpeek: {
-      tagline: 'Quick Look, elevated.',
-      description: 'SmoothPeek gives Quick Look a second opinion — more file types, smoother navigation.',
+      tagline: 'See before you switch.',
+      description: 'Hover over any Dock icon to instantly preview all open windows — then click to switch with confidence.',
       longDescription:
-        "You hover over a file and want to know what's inside — instantly. SmoothPeek extends Quick Look with support for more file types, fluid navigation between files, and an experience so native you'll forget it's a third-party app.",
+        "Clicking the wrong window wastes more of your day than you think. SmoothPeek shows you live previews of every open window the moment you hover over a Dock icon — so you always land exactly where you meant to go.",
       features: [
-        { title: 'More file types', description: 'Preview formats that Quick Look ignores — code files, archives, fonts, and more.' },
-        { title: 'Navigate without closing', description: 'Move between files in a folder while the preview stays open.' },
+        { title: 'Instant Dock Preview', description: 'Hover any Dock icon to see live thumbnails of every open window — no clicking required.' },
+        { title: 'All Windows at Once', description: 'Every open window for an app, shown side by side. Find the right one in a glance.' },
         {
-          title: 'Works everywhere Quick Look does',
-          description: 'Finder, Open dialogs, Desktop — wherever you can Quick Look, SmoothPeek enhances it.',
+          title: 'One-click Focus',
+          description: 'Tap any thumbnail to bring that exact window to the front. No hunting through app switchers.',
         },
         {
-          title: 'Feels completely native',
-          description: 'Uses the same visual language as Quick Look — no jarring transitions or foreign UI.',
+          title: 'Beautifully Native',
+          description: 'Smooth fade animations and a visual design that feels like it belongs in macOS.',
         },
-        { title: 'Instant preview', description: 'No loading spinners. Files appear the moment you press Space.' },
-        { title: 'Keyboard-only workflow', description: 'Navigate, close, and open files entirely from the keyboard.' },
+        { title: '100ms Response', description: 'Previews appear the instant you hover. No loading, no delay, no spinner.' },
+        { title: 'Keyboard Friendly', description: 'Tab between windows and press Enter to switch. Works entirely without a mouse.' },
       ],
-      ctaHeadline: "See what's inside.",
+      ctaHeadline: 'Your Dock, elevated.',
       ctaSubtext: 'One-time purchase',
       crossSell: 'Also check out',
       crossSellTagline: 'Window snapping that feels native.',
       seo: {
-        title: 'SmoothPeek — Quick Look, Elevated for macOS',
-        description: 'SmoothPeek gives Quick Look a second opinion — more file types, smoother navigation.',
+        title: 'SmoothPeek — Window Previews from the Dock',
+        description: 'Hover over any Dock icon to instantly preview all open windows. Click to switch with precision. Requires macOS 14 Sonoma or later.',
       },
-      screenshotAlts: ['SmoothPeek previewing a file', 'SmoothPeek file navigation'],
+      screenshotAlts: ['SmoothPeek showing window previews on Dock hover', 'SmoothPeek multi-window preview panel'],
     },
   },
   support: {
@@ -135,16 +135,16 @@ const en: Translations = {
     smoothpeek: {
       faqs: [
         {
-          q: 'Which file types does SmoothPeek add support for?',
-          a: 'SmoothPeek adds preview support for code files, markdown, archives, fonts, and more — a full list is available in-app.',
+          q: 'How does SmoothPeek work?',
+          a: 'When you hover over a Dock icon, SmoothPeek shows a floating panel with live thumbnails of every open window for that app. Click any thumbnail to switch to that window instantly.',
         },
         {
-          q: 'Does it replace Quick Look?',
-          a: 'SmoothPeek extends Quick Look — it does not replace it. You still use the Space key as normal.',
+          q: 'Which macOS versions are supported?',
+          a: 'SmoothPeek requires macOS 14 Sonoma or later. It runs natively on both Apple Silicon and Intel Macs.',
         },
         {
-          q: 'Is it compatible with third-party file managers?',
-          a: 'SmoothPeek works wherever Quick Look does, including third-party Finder alternatives that use the Quick Look API.',
+          q: 'Why does SmoothPeek need Accessibility and Screen Recording permissions?',
+          a: 'Accessibility permission is used to detect hover events on Dock icons. Screen Recording is used to capture live window thumbnails on your local device. No data is transmitted or stored — everything stays on your Mac.',
         },
       ],
     },

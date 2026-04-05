@@ -46,7 +46,7 @@ const zh: Translations = {
     },
     seo: {
       title: 'smooth-mac — macOS 工具，精心制作',
-      description: 'smooth-mac 为 macOS 制作专注的实用工具。SmoothSnap 管理窗口。SmoothPeek 预览文件。',
+      description: 'smooth-mac 为 macOS 制作专注的实用工具。SmoothSnap 管理窗口。SmoothPeek 预览 Dock 窗口。',
     },
   },
   product: {
@@ -75,7 +75,7 @@ const zh: Translations = {
       ctaHeadline: '准备好吸附了吗？',
       ctaSubtext: '一次性购买',
       crossSell: '还可以看看',
-      crossSellTagline: 'Quick Look，更强大。',
+      crossSellTagline: '切换前，先预览。',
       seo: {
         title: 'SmoothSnap — macOS 窗口吸附应用',
         description: 'macOS 的窗口吸附 — 快速、以键盘为中心，在你需要之前悄无声息。',
@@ -83,33 +83,33 @@ const zh: Translations = {
       screenshotAlts: ['SmoothSnap 窗口吸附演示', 'SmoothSnap 多显示器布局'],
     },
     smoothpeek: {
-      tagline: 'Quick Look，更强大。',
-      description: 'SmoothPeek 为 Quick Look 提供第二意见 — 更多文件类型，更流畅的导航。',
+      tagline: '切换前，先预览。',
+      description: '将鼠标悬停在任意 Dock 图标上，即可即时预览所有打开的窗口 — 再点击精准切换。',
       longDescription:
-        '你将鼠标悬停在文件上，想立即知道里面是什么。SmoothPeek 通过支持更多文件类型、文件间的流畅导航，以及让你忘记它是第三方应用的原生体验，来扩展 Quick Look。',
+        '点错窗口浪费的时间比你想象的更多。SmoothPeek 在你将鼠标悬停在 Dock 图标上的瞬间，展示所有打开窗口的实时预览，让你每次都能精准地到达目标。',
       features: [
-        { title: '更多文件类型', description: '预览 Quick Look 忽略的格式 — 代码文件、归档文件、字体等。' },
-        { title: '不关闭即可导航', description: '在预览保持打开的同时，在文件夹中的文件之间移动。' },
+        { title: 'Dock 即时预览', description: '悬停任意 Dock 图标，即可看到所有打开窗口的实时缩略图 — 无需点击。' },
+        { title: '一览所有窗口', description: '应用的所有打开窗口并排显示。一眼就能找到正确的那个。' },
         {
-          title: '在 Quick Look 能用的地方都能用',
-          description: 'Finder、打开对话框、桌面 — 凡是能用 Quick Look 的地方，SmoothPeek 都能增强它。',
+          title: '一键聚焦',
+          description: '点击任意缩略图即可将该窗口置于前端，不需要在应用切换器中翻找。',
         },
         {
-          title: '完全原生的感觉',
-          description: '使用与 Quick Look 相同的视觉语言 — 没有突兀的过渡或陌生的 UI。',
+          title: '精致的原生感',
+          description: '流畅的淡入淡出动画和融入 macOS 的视觉设计。',
         },
-        { title: '即时预览', description: '没有加载动画。你按下空格键的瞬间，文件就出现了。' },
-        { title: '纯键盘工作流', description: '完全用键盘导航、关闭和打开文件。' },
+        { title: '100ms 响应', description: '悬停瞬间即现预览，无加载、无延迟、无转圈。' },
+        { title: '键盘友好', description: '用 Tab 在窗口间切换，按 Enter 跳转。完全无需鼠标。' },
       ],
-      ctaHeadline: '看看里面是什么。',
+      ctaHeadline: '让你的 Dock 更聪明。',
       ctaSubtext: '一次性购买',
       crossSell: '还可以看看',
       crossSellTagline: '感觉原生的窗口吸附。',
       seo: {
-        title: 'SmoothPeek — macOS Quick Look 增强应用',
-        description: 'SmoothPeek 为 Quick Look 提供第二意见 — 更多文件类型，更流畅的导航。',
+        title: 'SmoothPeek — Dock 窗口预览应用',
+        description: '将鼠标悬停在任意 Dock 图标上，即可即时预览所有打开的窗口。点击精准切换。需要 macOS 14 Sonoma 或更高版本。',
       },
-      screenshotAlts: ['SmoothPeek 文件预览', 'SmoothPeek 文件导航'],
+      screenshotAlts: ['SmoothPeek 悬停 Dock 图标的窗口预览', 'SmoothPeek 多窗口预览面板'],
     },
   },
   support: {
@@ -134,16 +134,16 @@ const zh: Translations = {
     smoothpeek: {
       faqs: [
         {
-          q: 'SmoothPeek 新增支持哪些文件类型？',
-          a: 'SmoothPeek 新增了代码文件、Markdown、归档文件、字体等的预览支持 — 完整列表可在应用内查看。',
+          q: 'SmoothPeek 是如何工作的？',
+          a: '当你将鼠标悬停在 Dock 图标上时，SmoothPeek 会显示一个浮动面板，其中包含该应用所有打开窗口的实时缩略图。点击任意缩略图即可立即切换到该窗口。',
         },
         {
-          q: '它会替换 Quick Look 吗？',
-          a: 'SmoothPeek 扩展 Quick Look — 而非替换它。你仍然像平时一样使用空格键。',
+          q: '支持哪些 macOS 版本？',
+          a: 'SmoothPeek 需要 macOS 14 Sonoma 或更高版本。在 Apple Silicon 和 Intel Mac 上均可原生运行。',
         },
         {
-          q: '与第三方文件管理器兼容吗？',
-          a: 'SmoothPeek 在任何 Quick Look 可用的地方都能工作，包括使用 Quick Look API 的第三方 Finder 替代品。',
+          q: '为什么 SmoothPeek 需要辅助功能和屏幕录制权限？',
+          a: '辅助功能权限用于检测 Dock 图标上的悬停事件。屏幕录制权限用于在本地设备上捕获实时窗口缩略图。数据不会被传输或存储，所有处理均在 Mac 内完成。',
         },
       ],
     },

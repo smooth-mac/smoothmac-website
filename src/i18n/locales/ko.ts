@@ -51,7 +51,7 @@ const ko: Translations = {
     },
   },
   product: {
-    downloadButton: 'App Store에서 다운로드',
+    downloadButton: 'Mac App Store에서 다운로드',
     seeFeatures: '모든 기능 보기 ↓',
     learnMore: '자세히 보기',
     appStore: 'App Store',

@@ -51,7 +51,7 @@ const es: Translations = {
     },
   },
   product: {
-    downloadButton: 'Descargar en App Store',
+    downloadButton: 'Descargar en Mac App Store',
     seeFeatures: 'Ver todas las funciones ↓',
     learnMore: 'Saber más',
     appStore: 'App Store',

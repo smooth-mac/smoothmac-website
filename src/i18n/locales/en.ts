@@ -51,10 +51,10 @@ const en: Translations = {
     },
   },
   product: {
-    downloadButton: 'Download on the App Store',
+    downloadButton: 'Download on the Mac App Store',
     seeFeatures: 'See all features ↓',
     learnMore: 'Learn more',
-    appStore: 'App Store',
+    appStore: 'Mac App Store',
     featuresLabel: 'Features',
     featuresHeadline: ["Everything you need.", "Nothing you don't."],
     onePurchase: 'One-time purchase',

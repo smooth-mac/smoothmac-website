@@ -50,7 +50,7 @@ const zh: Translations = {
     },
   },
   product: {
-    downloadButton: '在 App Store 下载',
+    downloadButton: '在 Mac App Store 下载',
     seeFeatures: '查看所有功能 ↓',
     learnMore: '了解更多',
     appStore: 'App Store',

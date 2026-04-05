@@ -50,7 +50,7 @@ const ja: Translations = {
     },
   },
   product: {
-    downloadButton: 'App Storeでダウンロード',
+    downloadButton: 'Mac App Storeでダウンロード',
     seeFeatures: 'すべての機能を見る ↓',
     learnMore: '詳細を見る',
     appStore: 'App Store',

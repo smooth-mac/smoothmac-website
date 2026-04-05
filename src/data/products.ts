@@ -28,7 +28,7 @@ export const products: Product[] = [
       { src: '/products/smoothsnap/screenshot-2.png', alt: 'SmoothSnap multi-display layout' },
     ],
     price: 9.99,
-    appStoreUrl: 'https://apps.apple.com/app/smoothsnap',
+    appStoreUrl: 'https://apps.apple.com/app/smoothsnap?mt=12',
     features: [
       { icon: '⌨️' },
       { icon: '🖥️' },
@@ -52,7 +52,7 @@ export const products: Product[] = [
       { src: '/products/smoothpeek/screenshot-2.png', alt: 'SmoothPeek file navigation' },
     ],
     price: 2.99,
-    appStoreUrl: 'https://apps.apple.com/app/smoothpeek',
+    appStoreUrl: 'https://apps.apple.com/app/smoothpeek?mt=12',
     features: [
       { icon: '📁' },
       { icon: '🔀' },
